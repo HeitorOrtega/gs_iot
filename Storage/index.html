@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard Saúde no Trabalho</title>
+<link rel="stylesheet" href="style.css">
+</style>
+</head>
+<body>
+
+<h1>Dashboard Saúde no Trabalho & Natureza</h1>
+
+<section>
+  <h2>Previsão de Consumo de Energia</h2>
+  <p id="energia"></p>
+</section>
+
+<section>
+  <h2>Status do Ambiente</h2>
+  <p>Última leitura:</p>
+  <table id="classificacao">
+    <thead>
+      <tr>
+        <th>Sensor</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <p id="status"></p>
+</section>
+
+<section>
+  <h2>Detecção de Objetos (YOLO)</h2>
+  <ul id="objetos"></ul>
+  <p id="postura"></p>
+  <p id="eco"></p>
+</section>
+
+<script>
+// URLs dos JSONs públicos
+const urlReg = "https://raw.githubusercontent.com/HeitorOrtega/gs_iot/refs/heads/main/resultados/resultado_previsao_energia.json";
+const urlClf = "https://raw.githubusercontent.com/HeitorOrtega/gs_iot/refs/heads/main/resultados/resultado_classificacao.json";
+const urlYolo = "https://raw.githubusercontent.com/HeitorOrtega/gs_iot/refs/heads/main/resultados/resultado_yolo.json";
+
+// Função para buscar JSON
+async function fetchJSON(url) {
+  const res = await fetch(url);
+  return await res.json();
+}
+
+// Atualizar previsão de energia
+fetchJSON(urlReg).then(data => {
+  document.getElementById("energia").innerText =
+    `Previsão próxima hora: ${data.pred_kwh_next_1h} kWh (MAE: ${data.mae_test})`;
+});
+
+// Atualizar classificação do ambiente
+fetchJSON(urlClf).then(data => {
+  const tbody = document.getElementById("classificacao").querySelector("tbody");
+  const leitura = data.ultima_leitura;
+  tbody.innerHTML = "";
+  for (let key in leitura) {
+    let tr = document.createElement("tr");
+    tr.innerHTML = `<td>${key}</td><td>${leitura[key]}</td>`;
+    tbody.appendChild(tr);
+  }
+  document.getElementById("status").innerText =
+    `Status: ${data.pred_label} (Accuracy: ${data.accuracy_test})`;
+});
+
+// Atualizar YOLO
+fetchJSON(urlYolo).then(data => {
+  const ul = document.getElementById("objetos");
+  ul.innerHTML = "";
+  data.objetos_detectados.forEach(obj => {
+    let li = document.createElement("li");
+    li.innerText = `${obj.classe} — Confiança: ${obj.conf}`;
+    ul.appendChild(li);
+  });
+  document.getElementById("postura").innerText =
+    `Postura saudável: ${data.postura_saudavel}`;
+  document.getElementById("eco").innerText =
+    `Eco score: ${data.indicadores_natureza.eco_score} (Plantas: ${data.indicadores_natureza.plantas_detectadas})`;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #2c3e50;
+  padding: 20px;
+}
+
+/* Títulos */
+h1 {
+  text-align: center;
+  color: #1abc9c;
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: #34495e;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #1abc9c;
+  padding-bottom: 5px;
+}
+
+/* Seções */
+section {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Tabela de sensores */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+table th {
+  background-color: #1abc9c;
+  color: white;
+}
+
+/* Lista de objetos YOLO */
+#objetos li {
+  list-style: none;
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #ecf0f1;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* Parágrafos de status */
+#status, #energia, #postura, #eco {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Responsividade */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  table th, table td {
+    padding: 8px;
+  }
+}
