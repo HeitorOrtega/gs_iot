@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-11-13T22:29:30.927439",
+  "ultima_leitura": {
+    "timestamp": "2025-11-13T22:20:45",
+    "temperatura": 23.36,
+    "umidade": 54.47,
+    "co2": 401.2,
+    "ruido": 41,
+    "luminosidade": 33
+  },
+  "pred_probabilidades": {
+    "moderado": 0.9999289512634277,
+    "saudavel": 7.108180579962209e-05
+  },
+  "pred_label": "moderado",
+  "accuracy_test": 0.9814126491546631
+}
