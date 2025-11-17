@@ -5,6 +5,10 @@
 
 ---
 
+Link Video: https://www.youtube.com/watch?v=EFWH0EfX4wM
+
+---
+
 ## Objetivo Geral
 
 Desenvolver uma aplicação baseada em Deep Learning, apoiada por dados simulados de IoT, capaz de:
@@ -196,3 +200,16 @@ https://raw.githubusercontent.com/seu_usuario/repositorio/main/resultado_yolo.js
 * Bibliotecas usadas: TensorFlow, Keras, Ultralytics YOLOv8, Pandas, Numpy
 * Projeto desenvolvido por **Heitor Ortega Silva**
 * Notebook pronto para ser executado no Google Colab
+
+---
+
+Equipe WorkClean
+
+
+Heitor Ortega Silva - 557825
+
+Pedro Cardoso Saraiva - 555160
+
+Marcos Lourenço - 556496
+
+Curso: Análise e Desenvolvimento de Sistemas - FIAP
