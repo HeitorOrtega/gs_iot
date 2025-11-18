@@ -165,36 +165,6 @@ https://raw.githubusercontent.com/seu_usuario/repositorio/main/resultado_yolo.js
 
 ---
 
-## Como isso atende aos requisitos da disciplina
-
-| Requisito                         | Atendido? | Onde?                                                     |
-| --------------------------------- | --------- | --------------------------------------------------------- |
-| Uso de API de Visão Computacional | ✔         | YOLOv8 para análise de imagens                            |
-| Modelo de IA Generativa ou DL     | ✔         | Modelos DL de regressão e classificação                   |
-| Integração com outras disciplinas | ✔         | Geração dos JSONs para serem consumidos por Web/Mobile/BD |
-| Documentação                      | ✔         | Este README + Notebook comentado                          |
-| Código executável                 | ✔         | Notebook testado 100%                                     |
-| Demonstração funcional da IA      | ✔         | Previsão + Classificação + YOLO funcionando               |
-
----
-
-## Roteiro de vídeo de apresentação
-
-1. Apresentar objetivo do projeto (saúde no trabalho + impacto ambiental)
-2. Mostrar notebook Colab:
-
-   * Simulação de sensores IoT
-   * Treinamento de modelos DL (regressão e classificação)
-   * Upload de imagem e detecção YOLO
-3. Mostrar JSONs gerados (`resultado_previsao_energia.json`, etc.)
-4. Abrir dashboard no navegador:
-
-   * Gráficos / tabelas / lista de objetos
-   * Evidenciar integração com front-end
-5. Conclusão: destacar integração interdisciplinar e uso de IA para monitoramento ambiental
-
----
-
 ## Observações Finais
 
 * Dados IoT são simulados para demonstração
