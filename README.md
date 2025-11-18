@@ -5,8 +5,8 @@
 
 ---
 
-Link Video: https://www.youtube.com/watch?v=EFWH0EfX4wM
-Link Vercel: https://gs-iot.vercel.app/
+- Link Video: https://www.youtube.com/watch?v=EFWH0EfX4wM
+- Link Vercel: https://gs-iot.vercel.app/
 
 ---
 
